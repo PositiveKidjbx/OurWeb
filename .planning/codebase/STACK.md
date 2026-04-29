@@ -1,78 +1,41 @@
-﻿# Technology Stack
+﻿# 技术栈
 
-**Analysis Date:** 2026-04-29
+**分析日期：** 2026-04-29
 
-## Summary
-This repository is a static frontend landing page with plain HTML, CSS, and vanilla JavaScript. Runtime execution is browser-native with no detected package manager, build pipeline, or server runtime.
+## 总结
 
-## Key Findings
-- Core app assets are `index.html`, `styles.css`, and `main.js` with direct browser loading (`<link rel="stylesheet" href="./styles.css" />`, `<script src="./main.js"></script>`) in `index.html`.
-- Styling is hand-authored CSS using custom properties and responsive media queries in `styles.css`.
-- Interaction logic is minimal DOM scripting for mobile menu toggle and anchor navigation behavior in `main.js`.
-- Google Fonts is used as an external dependency via `fonts.googleapis.com` and `fonts.gstatic.com` in `index.html`.
-- Project planning document `docs/PRD.md` defines scope as single-page delivery and explicitly excludes backend form submission for current phase.
+该仓库是浏览器直出的静态单页项目，核心由 `index.html`、`styles.css`、`main.js` 组成，无后端、无打包构建链、无包管理清单。
 
-## Unknowns/Assumptions
-- Version pinning for browser compatibility is not encoded in config files; compatibility is inferred from `docs/PRD.md` browser target statements.
-- No CI/CD or deployment manifest is present; hosting assumptions are based on static-site structure.
-- No lockfile or package metadata exists; dependency tracking is implicit rather than tool-managed.
+## 关键发现
 
-## Languages
+- 页面结构由 `index.html` 直接组织各区块。
+- 样式集中在 `styles.css`，使用 CSS 变量与响应式媒体查询。
+- 交互逻辑在 `main.js`，主要覆盖移动菜单开关与锚点点击后的菜单收起。
+- 外部依赖主要是 Google Fonts。
+- PRD 在 `docs/PRD.md`，明确当前阶段为静态交付。
 
-**Primary:**
-- HTML5 - Page structure and section composition in `index.html`.
-- CSS3 - Theming, layout, and responsiveness in `styles.css`.
-- JavaScript (ES6+) - DOM behavior and menu interactions in `main.js`.
+## 语言与运行环境
 
-**Secondary:**
-- Markdown - Product requirements and implementation scope in `docs/PRD.md`.
+- HTML5 / CSS3 / JavaScript（ES6+）
+- 运行环境：现代浏览器
 
-## Runtime
+## 框架与工具
 
-**Environment:**
-- Web browser runtime (Chrome/Edge/Safari class targets stated in `docs/PRD.md`).
+- 前端框架：未检测到
+- 测试框架：未检测到
+- 构建工具：未检测到
 
-**Package Manager:**
-- Not detected.
-- Lockfile: missing.
+## 依赖与配置
 
-## Frameworks
+- 关键外部依赖：Google Fonts
+- 本地静态资源：`assets/images/placeholders/`
+- 未发现 `.env`、`package.json`、`vite/webpack` 等配置
 
-**Core:**
-- Not detected (no React/Vue/Angular or backend framework files).
+## 假设与未知项
 
-**Testing:**
-- Not detected (no test runner config or test files).
-
-**Build/Dev:**
-- Not detected (no bundler, transpiler, or task runner config).
-
-## Key Dependencies
-
-**Critical:**
-- Google Fonts CSS endpoint (`https://fonts.googleapis.com/css2?...`) - Supplies `Manrope` and `Barlow` font families for typography in `index.html`.
-
-**Infrastructure:**
-- Static local assets under `assets/images/placeholders/` - Provide demo visuals referenced by `index.html` sections.
-
-## Configuration
-
-**Environment:**
-- No `.env`-driven runtime integration detected.
-- Content and section structure are configured directly in `index.html` and described by `docs/PRD.md`.
-
-**Build:**
-- No build config files detected (`package.json`, `vite.config.*`, `webpack.*`, `tsconfig.json`, `go.mod`, `pyproject.toml` absent at repo root).
-
-## Platform Requirements
-
-**Development:**
-- Any static file-capable environment and modern browser for preview.
-- No local service dependencies detected.
-
-**Production:**
-- Static hosting target (CDN, object storage static website, or basic web server) is compatible with current artifact layout (`index.html` + static assets).
+- 浏览器兼容目标依据 PRD 推断。
+- 部署方式预计为静态托管。
+- 依赖版本控制目前为“隐式管理”。
 
 ---
-
-*Stack analysis: 2026-04-29*
+*技术栈分析：2026-04-29*
