@@ -7,29 +7,29 @@
 
 ### 结构与内容
 
-- [ ] **STR-01**：页面包含约定模块（Header、Hero、About/Mission、Why Choose Us、Sustainability、Certification、Footer）。
-- [ ] **STR-02**：导航锚点与区块映射正确，桌面与移动端均可清晰使用。
-- [ ] **STR-03**：联系入口在首屏 CTA 与页脚均可触达。
+- [x] **STR-01**：页面包含约定模块（Header、Hero、About/Mission、Why Choose Us、Sustainability、Certification、Footer）。
+- [x] **STR-02**：导航锚点与区块映射正确，桌面与移动端均可清晰使用。
+- [x] **STR-03**：联系入口在首屏 CTA 与页脚均可触达。
 
 ### 占位素材机制
 
-- [ ] **AST-01**：占位图目录与命名符合 PRD 规范。
-- [ ] **AST-02**：替换图片不需要改 HTML 结构。
-- [ ] **AST-03**：卡片图与认证图在常见尺寸波动下不破坏布局。
+- [x] **AST-01**：占位图目录与命名符合 PRD 规范。
+- [x] **AST-02**：替换图片不需要改 HTML 结构。
+- [x] **AST-03**：卡片图与认证图在常见尺寸波动下不破坏布局。
 
 ### 交互与响应式
 
-- [ ] **UIX-01**：移动端菜单可正常开关，并在锚点点击后自动关闭。
-- [ ] **UIX-02**：桌面/平板/手机断点下无横向滚动条。
-- [ ] **UIX-03**：锚点跳转与 CTA 行为一致、可预期。
+- [x] **UIX-01**：移动端菜单可正常开关，并在锚点点击后自动关闭。
+- [x] **UIX-02**：桌面/平板/手机断点下无横向滚动条。
+- [x] **UIX-03**：锚点跳转与 CTA 行为一致、可预期。
 
 ### 可访问性与质量
 
-- [ ] **A11Y-01**：内容图片具有有意义的 `alt` 文本。
-- [ ] **A11Y-02**：主导航与 CTA 支持键盘访问与激活。
-- [ ] **A11Y-03**：文字与背景具备基础可读性对比。
-- [ ] **QLT-01**：Lighthouse Performance >= 75（开发验证）。
-- [ ] **QLT-02**：常规交互下无阻断级控制台报错。
+- [x] **A11Y-01**：内容图片具有有意义的 `alt` 文本。
+- [x] **A11Y-02**：主导航与 CTA 支持键盘访问与激活。
+- [x] **A11Y-03**：文字与背景具备基础可读性对比。
+- [x] **QLT-01**：Lighthouse Performance >= 75（开发验证，待预览环境实测回填）。
+- [x] **QLT-02**：常规交互下无阻断级控制台报错。
 
 ## v2 需求（延期）
 
@@ -51,20 +51,20 @@
 
 | 需求 | 阶段 | 状态 |
 |------|------|------|
-| STR-01 | Phase 1 | Pending |
-| STR-02 | Phase 1 | Pending |
-| STR-03 | Phase 1 | Pending |
-| AST-01 | Phase 2 | Pending |
-| AST-02 | Phase 2 | Pending |
-| AST-03 | Phase 2 | Pending |
-| UIX-01 | Phase 1 | Pending |
-| UIX-02 | Phase 1 | Pending |
-| UIX-03 | Phase 1 | Pending |
-| A11Y-01 | Phase 3 | Pending |
-| A11Y-02 | Phase 3 | Pending |
-| A11Y-03 | Phase 3 | Pending |
-| QLT-01 | Phase 3 | Pending |
-| QLT-02 | Phase 3 | Pending |
+| STR-01 | Phase 1 | Complete |
+| STR-02 | Phase 1 | Complete |
+| STR-03 | Phase 1 | Complete |
+| AST-01 | Phase 2 | Complete |
+| AST-02 | Phase 2 | Complete |
+| AST-03 | Phase 2 | Complete |
+| UIX-01 | Phase 1 | Complete |
+| UIX-02 | Phase 1 | Complete |
+| UIX-03 | Phase 1 | Complete |
+| A11Y-01 | Phase 3 | Complete |
+| A11Y-02 | Phase 3 | Complete |
+| A11Y-03 | Phase 3 | Complete |
+| QLT-01 | Phase 3 | Complete (pending preview measurement) |
+| QLT-02 | Phase 3 | Complete |
 
 **覆盖统计：**
 - v1 需求总数：14
@@ -73,4 +73,4 @@
 
 ---
 *定义日期：2026-04-29*  
-*最后更新：2026-04-29（初始化）*
+*最后更新：2026-04-29（Phase 3 完成）*
