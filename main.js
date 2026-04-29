@@ -1,5 +1,17 @@
 ﻿const menuToggle = document.getElementById("menuToggle");
 const nav = document.getElementById("nav");
+const imageMap = window.IMAGE_MAP || {};
+
+document.querySelectorAll("img[data-image-key]").forEach((image) => {
+  const key = image.getAttribute("data-image-key");
+  if (!key) {
+    return;
+  }
+  const mappedSrc = imageMap[key];
+  if (mappedSrc) {
+    image.setAttribute("src", mappedSrc);
+  }
+});
 
 if (menuToggle && nav) {
   const closeNav = () => {
