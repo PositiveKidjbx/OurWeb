@@ -12,7 +12,7 @@
 Phase: 3 / 3（可访问性与交付质量闸门）  
 Plan: 2 / 2  
 Status: Phase complete  
-Last activity: 2026-04-29 - 已完成 03-02 质量闸门验证与交付收口
+Last activity: 2026-04-29 - 已补充 Terms/Privacy 独立区块并修复页脚导航目标
 
 Progress: [██████████] 100%
 
