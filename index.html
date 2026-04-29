@@ -11,11 +11,12 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="header" id="top">
     <div class="container nav-wrap">
       <a href="#top" class="logo" aria-label="OKIA Home">OKIA</a>
       <button id="menuToggle" class="menu-toggle" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">☰</button>
-      <nav id="nav" class="nav">
+      <nav id="nav" class="nav" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#technology">Technology</a>
         <a href="#sustainability">Sustainability</a>
@@ -26,9 +27,9 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero">
-      <img src="./assets/images/placeholders/hero.svg" data-image-key="heroBg" alt="Hero placeholder" class="hero-bg" />
+      <img src="./assets/images/placeholders/hero.svg" data-image-key="heroBg" alt="OKIA Vietnam factory production environment" class="hero-bg" />
       <div class="hero-overlay"></div>
       <div class="container hero-content">
         <p class="eyebrow">Vietnam Manufacturing Hub</p>
@@ -49,7 +50,7 @@
           <p>本区用于展示品牌背景、制造理念与全球合作经验。当前为演示文案，后续可按你的外部需求替换。</p>
           <p>建议在这里突出产能、交付稳定性、合规能力，以及对客户定制化需求的响应速度。</p>
         </div>
-        <img src="./assets/images/placeholders/about.svg" data-image-key="aboutImage" alt="About placeholder" class="rounded" />
+        <img src="./assets/images/placeholders/about.svg" data-image-key="aboutImage" alt="Factory team and manufacturing process overview" class="rounded" />
       </div>
     </section>
 
@@ -97,12 +98,12 @@
         <p class="eyebrow text-dark">Certification</p>
         <h2>Global Standard Compliance</h2>
         <div class="logo-wall">
-          <img src="./assets/images/placeholders/cert-01.svg" data-image-key="cert01" alt="cert 01" />
-          <img src="./assets/images/placeholders/cert-02.svg" data-image-key="cert02" alt="cert 02" />
-          <img src="./assets/images/placeholders/cert-03.svg" data-image-key="cert03" alt="cert 03" />
-          <img src="./assets/images/placeholders/cert-04.svg" data-image-key="cert04" alt="cert 04" />
-          <img src="./assets/images/placeholders/cert-05.svg" data-image-key="cert05" alt="cert 05" />
-          <img src="./assets/images/placeholders/cert-06.svg" data-image-key="cert06" alt="cert 06" />
+          <img src="./assets/images/placeholders/cert-01.svg" data-image-key="cert01" alt="ISO quality management certification logo placeholder" />
+          <img src="./assets/images/placeholders/cert-02.svg" data-image-key="cert02" alt="Environmental compliance certification logo placeholder" />
+          <img src="./assets/images/placeholders/cert-03.svg" data-image-key="cert03" alt="Safety standard certification logo placeholder" />
+          <img src="./assets/images/placeholders/cert-04.svg" data-image-key="cert04" alt="International audit certification logo placeholder" />
+          <img src="./assets/images/placeholders/cert-05.svg" data-image-key="cert05" alt="Sustainability initiative certification logo placeholder" />
+          <img src="./assets/images/placeholders/cert-06.svg" data-image-key="cert06" alt="Client compliance certification logo placeholder" />
         </div>
       </div>
     </section>
