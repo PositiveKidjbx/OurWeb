@@ -1,72 +1,70 @@
-# okia-vietnam-factory-delivery
+﻿# 项目概览
 
-## What This Is
+## 项目说明
 
-This project is a responsive, single-page corporate website delivery modeled on the OKIA Vietnam Factory reference page. It is designed for B2B visitors, partners, and brand researchers to quickly understand company positioning, core capabilities, sustainability practices, and contact channels. The current implementation emphasizes maintainability so business teams can replace assets and copy with minimal engineering effort.
+这是一个静态单页企业官网项目（Landing Page），运行于浏览器端，无后端服务与构建工具链。当前实现基于 `index.html`、`styles.css`、`main.js`，并采用占位图片机制，后续可由业务侧替换素材与文案。
 
-## Core Value
+## 核心价值
 
-Deliver a clear, trustworthy corporate narrative in one page while keeping content and image replacement low-cost and low-risk.
+在保证企业展示表达完整的前提下，尽量降低后续内容替换与维护成本。
 
-## Requirements
+## 需求
 
-### Validated
+### 已验证
 
-- [x] Single-page structure with key corporate sections is implemented in existing codebase.
-- [x] Responsive layout and mobile navigation behavior are implemented.
-- [x] Placeholder image strategy and standardized asset paths are already in use.
+- [x] 单页官网核心模块已落地（导航、首屏、内容区、页脚）。
+- [x] 响应式布局与移动端菜单交互已具备。
+- [x] 占位图目录与命名规则已在代码中使用。
 
-### Active
+### 进行中
 
-- [ ] Improve accessibility compliance consistency (keyboard flow, labels, contrast checks).
-- [ ] Harden performance baseline to reliably meet Lighthouse performance target in normal delivery conditions.
-- [ ] Add maintainable content/image mapping layer so replacements can be done without touching page structure.
+- [ ] 统一可访问性细节（键盘可达、文本替代、对比度）。
+- [ ] 提升性能基线，稳定达到验收目标。
+- [ ] 增加更清晰的内容/图片映射层，减少结构性改动风险。
 
-### Out of Scope
+### 范围外
 
-- CMS backend - excluded in current PRD scope to keep delivery fast.
-- Multi-language switching - explicitly deferred to later iteration.
-- Form backend submission - not required for current static delivery phase.
-- Deep SEO optimization - only baseline meta support expected in this cycle.
+- CMS 后台。
+- 多语言切换。
+- 表单后端提交。
+- 深度 SEO 优化。
 
-## Context
+## 背景
 
-- Existing implementation is a static frontend stack (`index.html`, `styles.css`, `main.js`) with no build system or backend.
-- PRD (`docs/PRD.md`) defines this as a fast landing page delivery with placeholder assets and later business-side replacement.
-- Codebase mapping artifacts under `.planning/codebase/` provide architecture, stack, conventions, testing, and concerns baselines.
-- Current maturity is closer to "functional draft delivered" than "production-hardened release."
+- PRD 位于 `docs/PRD.md`，目标是快速交付与参考站点节奏接近的企业落地页。
+- 代码库映射文档位于 `.planning/codebase/`，用于后续规划与执行。
+- 当前状态更接近“功能已具备、质量待加固”的交付前阶段。
 
-## Constraints
+## 约束
 
-- **Tech stack**: Static HTML/CSS/JS without framework or backend - must preserve low complexity and easy handoff.
-- **Compatibility**: Modern browsers (Chrome/Edge/Safari latest two major versions) - required by PRD.
-- **Asset dependency**: Final enterprise assets/copy provided by client - delivery quality depends on incoming material quality.
-- **Scope/timeline**: Corporate landing page only - avoid expanding into CMS or multi-page platform work.
+- **技术约束**：保持静态前端架构，避免引入不必要复杂度。
+- **兼容约束**：面向现代浏览器（Chrome/Edge/Safari 近两个主版本）。
+- **交付约束**：真实素材依赖业务方提供，需保证替换后不破版。
+- **范围约束**：本期仅做单页官网，不扩展多页平台能力。
+- **提交流程约束**：每个小功能必须先完成验证（功能检查 + 无阻断错误）后再提交；提交后需及时推送 GitHub，避免长时间堆积导致冲突。
 
-## Key Decisions
+## 关键决策
 
-| Decision | Rationale | Outcome |
-|----------|-----------|---------|
-| Keep static architecture for v1 | Aligns with fast delivery and easy replacement requirement from PRD | - Pending |
-| Treat existing implemented sections as validated baseline | Brownfield repo already contains expected page modules | - Pending |
-| Use coarse-grained roadmap phases | Project is small and focused; broad phases reduce overhead | - Pending |
+| 决策 | 原因 | 结果 |
+|------|------|------|
+| v1 保持静态架构 | 贴合快速交付与易替换目标 | 待验证 |
+| 将现有功能视为基线能力 | 代码已覆盖核心模块 | 待验证 |
+| 路线图采用粗粒度阶段 | 项目体量小，降低流程开销 | 待验证 |
 
-## Evolution
+## 演进规则
 
-This document evolves at phase transitions and milestone boundaries.
+每次阶段切换后：
+1. 失效需求移入范围外并说明原因。
+2. 已交付验证需求移入已验证并标注阶段。
+3. 新出现需求加入进行中。
+4. 关键决策增量记录。
+5. 检查项目定位描述是否漂移。
 
-**After each phase transition** (via `$gsd-transition`):
-1. Requirements invalidated? -> Move to Out of Scope with reason
-2. Requirements validated? -> Move to Validated with phase reference
-3. New requirements emerged? -> Add to Active
-4. Decisions to log? -> Add to Key Decisions
-5. "What This Is" still accurate? -> Update if drifted
-
-**After each milestone** (via `$gsd-complete-milestone`):
-1. Full review of all sections
-2. Core Value check - still the right priority?
-3. Audit Out of Scope - reasons still valid?
-4. Update Context with current state
+每次里程碑完成后：
+1. 全文复核。
+2. 核心价值复核。
+3. 范围外条目复核。
+4. 更新项目背景与当前状态。
 
 ---
-*Last updated: 2026-04-29 after initialization*
+*最后更新：2026-04-29（初始化）*

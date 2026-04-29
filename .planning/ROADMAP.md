@@ -1,64 +1,65 @@
-# Roadmap: okia-vietnam-factory-delivery
+﻿# 路线图：okia-vietnam-factory-delivery
 
-## Overview
+## 概览
 
-This roadmap takes the current brownfield landing page from functional implementation to a stable delivery baseline by tightening structure fidelity, replacement workflows, and quality verification. Work is split into three coarse phases so we can ship quickly while still enforcing acceptance standards.
+本路线图将当前“功能已具备”的静态官网，推进到“可稳定交付”的状态，重点覆盖结构一致性、素材替换流程与质量验收闭环。
 
-## Phases
+## 阶段列表
 
-- [ ] **Phase 1: IA & Responsive Hardening** - Lock page structure, anchors, navigation behavior, and responsive stability.
-- [ ] **Phase 2: Asset Replacement Workflow** - Standardize and validate placeholder-to-real-asset replacement mechanics.
-- [ ] **Phase 3: Accessibility & Delivery Quality Gate** - Close a11y and performance gaps and prepare acceptance-ready output.
+- [ ] **Phase 1：信息架构与响应式加固** - 固化模块结构、锚点关系与跨端布局稳定性。
+- [ ] **Phase 2：素材替换工作流标准化** - 让占位图到正式素材的替换可控、可复用。
+- [ ] **Phase 3：可访问性与交付质量闸门** - 补齐 a11y、控制台健康、性能验收。
 
-## Phase Details
+## 阶段详情
 
-### Phase 1: IA & Responsive Hardening
-**Goal**: Ensure all required sections and interactions behave consistently across target viewport ranges.
-**Depends on**: Nothing (first phase)
-**Requirements**: STR-01, STR-02, STR-03, UIX-01, UIX-02, UIX-03
-**Success Criteria** (what must be TRUE):
-1. User can navigate to every major section through top navigation on desktop and mobile.
-2. User sees no horizontal overflow on common mobile/tablet/desktop viewport widths.
-3. User can use CTA paths to reach contact content from hero and footer routes.
-**Plans**: 3 plans
-
-Plans:
-- [ ] 01-01: Audit current section/anchor contract and normalize IDs, nav targets, and CTA destinations.
-- [ ] 01-02: Refine responsive breakpoints/layout rules and verify no overflow regressions.
-- [ ] 01-03: Validate interaction flows (menu toggle, anchor close behavior) and polish edge cases.
-
-### Phase 2: Asset Replacement Workflow
-**Goal**: Make image and content replacement deterministic without structural edits.
-**Depends on**: Phase 1
-**Requirements**: AST-01, AST-02, AST-03
-**Success Criteria** (what must be TRUE):
-1. User can replace placeholders using documented naming/path conventions without layout breakage.
-2. User can inspect a single mapping source for image references instead of editing scattered markup.
-3. User sees consistent rendering behavior for hero, cards, and certification assets after replacement.
-**Plans**: 2 plans
+### Phase 1：信息架构与响应式加固
+**目标**：保证必需区块与核心交互在目标视口范围内行为一致。  
+**依赖**：无（首阶段）  
+**需求**：STR-01, STR-02, STR-03, UIX-01, UIX-02, UIX-03  
+**执行约束**：每完成一个小功能，必须先完成验证，再执行 git commit 与 push。  
+**成功标准**：
+1. 用户可通过导航在桌面与移动端到达所有核心区块。
+2. 常见视口下页面无横向溢出。
+3. 用户可通过首屏与页脚路径触达联系信息。
+**计划数**：3
 
 Plans:
-- [ ] 02-01: Introduce or refine centralized asset mapping and wire page references through it.
-- [ ] 02-02: Add replacement guide/checklist and verify with sample swap scenarios.
+- [ ] 01-01：核对并统一 section id、导航锚点与 CTA 目标。
+- [ ] 01-02：优化断点与布局规则，消除溢出风险。
+- [ ] 01-03：验证菜单开关与锚点关闭等交互边界场景。
 
-### Phase 3: Accessibility & Delivery Quality Gate
-**Goal**: Reach acceptance-ready baseline for accessibility, console health, and performance.
-**Depends on**: Phase 2
-**Requirements**: A11Y-01, A11Y-02, A11Y-03, QLT-01, QLT-02
-**Success Criteria** (what must be TRUE):
-1. User can navigate primary controls with keyboard and understand image context via alt text.
-2. User encounters no blocking console errors during common interactions.
-3. User gets Lighthouse performance at or above target threshold in validation run.
-**Plans**: 2 plans
+### Phase 2：素材替换工作流标准化
+**目标**：保证替换图片/内容时无需改结构代码。  
+**依赖**：Phase 1  
+**需求**：AST-01, AST-02, AST-03  
+**成功标准**：
+1. 用户按规范替换素材后页面不破版。
+2. 图片引用可从集中映射入口维护。
+3. Hero/卡片/认证区替换后渲染一致。
+**计划数**：2
 
 Plans:
-- [ ] 03-01: Apply accessibility fixes (alt semantics, focus order, control labels, contrast adjustments).
-- [ ] 03-02: Run quality pass (console/performance), optimize critical assets, and finalize handoff notes.
+- [ ] 02-01：引入或完善集中素材映射层并接入页面。
+- [ ] 02-02：补充替换说明与样例验证清单。
 
-## Progress
+### Phase 3：可访问性与交付质量闸门
+**目标**：达到可验收发布的质量基线。  
+**依赖**：Phase 2  
+**需求**：A11Y-01, A11Y-02, A11Y-03, QLT-01, QLT-02  
+**成功标准**：
+1. 用户可通过键盘完成主要导航与操作。
+2. 常规使用过程无阻断级控制台报错。
+3. Lighthouse Performance 达到或超过目标值。
+**计划数**：2
 
-| Phase | Plans Complete | Status | Completed |
-|-------|----------------|--------|-----------|
-| 1. IA & Responsive Hardening | 0/3 | Not started | - |
-| 2. Asset Replacement Workflow | 0/2 | Not started | - |
-| 3. Accessibility & Delivery Quality Gate | 0/2 | Not started | - |
+Plans:
+- [ ] 03-01：完成可访问性修正（alt、焦点、标签、对比度）。
+- [ ] 03-02：执行性能与控制台健康验证并收口交付说明。
+
+## 进度
+
+| 阶段 | 已完成计划 | 状态 | 完成时间 |
+|------|------------|------|----------|
+| 1. 信息架构与响应式加固 | 0/3 | Not started | - |
+| 2. 素材替换工作流标准化 | 0/2 | Not started | - |
+| 3. 可访问性与交付质量闸门 | 0/2 | Not started | - |

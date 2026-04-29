@@ -1,58 +1,56 @@
-# Requirements: okia-vietnam-factory-delivery
+﻿# 需求文档：okia-vietnam-factory-delivery
 
-**Defined:** 2026-04-29
-**Core Value:** Deliver a clear, trustworthy corporate narrative in one page while keeping content and image replacement low-cost and low-risk.
+**定义日期：** 2026-04-29  
+**核心价值：** 在单页中清晰传达企业信息，同时保持素材替换成本低、风险可控。
 
-## v1 Requirements
+## v1 需求
 
-### Structure & Content
+### 结构与内容
 
-- [ ] **STR-01**: Page contains all agreed modules (Header, Hero, About/Mission, Why Choose Us, Sustainability, Certification, Footer).
-- [ ] **STR-02**: Navigation anchors map correctly to each section and remain readable on desktop and mobile.
-- [ ] **STR-03**: Contact entry points are available in both top-level CTA and footer area.
+- [ ] **STR-01**：页面包含约定模块（Header、Hero、About/Mission、Why Choose Us、Sustainability、Certification、Footer）。
+- [ ] **STR-02**：导航锚点与区块映射正确，桌面与移动端均可清晰使用。
+- [ ] **STR-03**：联系入口在首屏 CTA 与页脚均可触达。
 
-### Placeholder Asset System
+### 占位素材机制
 
-- [ ] **AST-01**: Placeholder image directory and naming rules follow PRD conventions.
-- [ ] **AST-02**: Replacing placeholder images does not require HTML structure changes.
-- [ ] **AST-03**: Card and logo image slots maintain layout integrity under typical image dimension variance.
+- [ ] **AST-01**：占位图目录与命名符合 PRD 规范。
+- [ ] **AST-02**：替换图片不需要改 HTML 结构。
+- [ ] **AST-03**：卡片图与认证图在常见尺寸波动下不破坏布局。
 
-### Interaction & Responsiveness
+### 交互与响应式
 
-- [ ] **UIX-01**: Mobile navigation can open/close cleanly and returns to closed state after anchor click.
-- [ ] **UIX-02**: Breakpoint behavior supports desktop/tablet/mobile layouts without horizontal overflow.
-- [ ] **UIX-03**: Anchor interactions and CTA behavior provide predictable in-page movement.
+- [ ] **UIX-01**：移动端菜单可正常开关，并在锚点点击后自动关闭。
+- [ ] **UIX-02**：桌面/平板/手机断点下无横向滚动条。
+- [ ] **UIX-03**：锚点跳转与 CTA 行为一致、可预期。
 
-### Accessibility & Quality
+### 可访问性与质量
 
-- [ ] **A11Y-01**: All content images include meaningful `alt` text.
-- [ ] **A11Y-02**: Keyboard users can reach and activate primary navigation and CTA controls.
-- [ ] **A11Y-03**: Text/background combinations satisfy baseline readability.
-- [ ] **QLT-01**: Lighthouse Performance target is >= 75 in development validation runs.
-- [ ] **QLT-02**: No blocking console errors appear during normal page interaction.
+- [ ] **A11Y-01**：内容图片具有有意义的 `alt` 文本。
+- [ ] **A11Y-02**：主导航与 CTA 支持键盘访问与激活。
+- [ ] **A11Y-03**：文字与背景具备基础可读性对比。
+- [ ] **QLT-01**：Lighthouse Performance >= 75（开发验证）。
+- [ ] **QLT-02**：常规交互下无阻断级控制台报错。
 
-## v2 Requirements
+## v2 需求（延期）
 
-### Deferred Enhancements
+- **V2-01**：多语言切换框架。
+- **V2-02**：CMS 内容管理能力。
+- **V2-03**：表单后端提交与通知。
+- **V2-04**：深度 SEO 策略。
 
-- **V2-01**: Multi-language switching framework.
-- **V2-02**: CMS-backed content management for sections and assets.
-- **V2-03**: Backend form submission and notification workflow.
-- **V2-04**: Expanded SEO strategy beyond base metadata.
+## 范围外
 
-## Out of Scope
+| 功能 | 原因 |
+|------|------|
+| 后端服务层 | 本期为静态页面交付 |
+| 多页站点架构 | 当前只做单页官网 |
+| 高级埋点体系 | 非本期验收要求 |
+| 设计系统迁移 | 对单页项目投入产出不高 |
 
-| Feature | Reason |
-|---------|--------|
-| Backend service layer | PRD defines static delivery focus for this iteration |
-| Multi-page site architecture | Current release is scoped to one landing page |
-| Advanced analytics/event pipeline | Not required for current acceptance criteria |
-| Design-system migration | Overhead is not justified for single-page delivery |
+## 可追踪矩阵
 
-## Traceability
-
-| Requirement | Phase | Status |
-|-------------|-------|--------|
+| 需求 | 阶段 | 状态 |
+|------|------|------|
 | STR-01 | Phase 1 | Pending |
 | STR-02 | Phase 1 | Pending |
 | STR-03 | Phase 1 | Pending |
@@ -68,11 +66,11 @@
 | QLT-01 | Phase 3 | Pending |
 | QLT-02 | Phase 3 | Pending |
 
-**Coverage:**
-- v1 requirements: 14 total
-- Mapped to phases: 14
-- Unmapped: 0
+**覆盖统计：**
+- v1 需求总数：14
+- 已映射阶段：14
+- 未映射：0
 
 ---
-*Requirements defined: 2026-04-29*
-*Last updated: 2026-04-29 after initial definition*
+*定义日期：2026-04-29*  
+*最后更新：2026-04-29（初始化）*
