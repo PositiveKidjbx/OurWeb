@@ -7,7 +7,7 @@
 
 ### 结构与内容
 
-- [x] **STR-01**：页面包含约定模块（Header、Hero、About/Mission、Why Choose Us、Sustainability、Certification、Footer）。
+- [x] **STR-01**：页面包含约定模块（Home、Sustainability、OKIA Vietnam Factory、Our Awards、Career、Contact Us）。
 - [x] **STR-02**：导航锚点与区块映射正确，桌面与移动端均可清晰使用。
 - [x] **STR-03**：联系入口在首屏 CTA 与页脚均可触达。
 
