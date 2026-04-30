@@ -67,13 +67,16 @@
 .story-title {
   position: absolute;
   top: 0;
-  left: 40%;
+  left: 0;
+  right: 0;
   z-index: 1;
-  width: min(1120px, calc(100vw - 32px));
-  transform: translateX(-50%);
+  width: 100%;
+  padding-inline: max(16px, calc((100vw - 1120px) / 3));
   color: #fff;
   pointer-events: none;
+  transform: none;
 }
+
 
 .title-block {
   position: relative;
