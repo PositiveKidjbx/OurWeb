@@ -7,13 +7,14 @@
 <domain>
 ## Phase Boundary
 
-将当前单页（`index.html`）重构为多个页面文件，围绕已确定的 6 项导航：
+将当前单页（`index.html`）重构为多个页面文件，围绕已确定的导航：
 - Home
 - Sustainability
-- OKIA Vietnam Factory
 - Our Awards
 - Career
 - Contact Us
+
+`OKIA Vietnam Factory` 的页面内容已并入 Home，不再作为独立导航项或独立页面。
 
 本阶段不引入后端服务，仅做前端静态架构升级。
 
@@ -23,7 +24,7 @@
 ## Implementation Decisions
 
 ### 页面拆分策略（锁定）
-- 每个导航项使用独立 HTML 页面承载（至少：`index.html`、`sustainability.html`、`factory.html`、`awards.html`、`career.html`、`contact.html`）。
+- 每个导航项使用独立 HTML 页面承载（至少：`index.html`、`sustainability.html`、`awards.html`、`career.html`、`contact.html`）。
 - 导航从“页内锚点”逐步改为“跨页面链接”。
 
 ### 公共结构策略（锁定）
@@ -46,7 +47,7 @@
 
 - `.planning/ROADMAP.md` - Phase 4 目标与计划
 - `.planning/REQUIREMENTS.md` - 当前需求与追踪矩阵
-- `docs/NAVIGATION_MAPPING.md` - 六项导航定义与映射
+- `docs/NAVIGATION_MAPPING.md` - 顶部导航定义与映射
 - `docs/ASSET_REPLACEMENT_GUIDE.md` - 素材替换策略
 - `content/images.js` - 图片映射源
 
@@ -75,3 +76,4 @@
 
 *Phase: 04-multi-page-refactor*  
 *Context gathered: 2026-04-30 via discuss summary*
+

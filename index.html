@@ -1,129 +1,64 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OKIA Vietnam Factory - Delivery Demo</title>
-  <meta name="description" content="企业官网落地页骨架演示，可替换图片与文案。" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Barlow:wght@500;700&display=swap" rel="stylesheet" />
+  <title>OKIA Vietnam Factory - OKIA</title>
+  <meta name="description" content="OKIA Vietnam Factory 工厂介绍页面。" />
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles/pages/factory.css" />
 </head>
 <body data-root="./">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div data-include="{{root}}partials/header.html"></div>
-
   <main id="main-content">
-    <section class="hero">
-      <img src="./assets/images/placeholders/hero.svg" data-image-key="heroBg" alt="OKIA Vietnam factory production environment" class="hero-bg" />
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <p class="eyebrow">Vietnam Manufacturing Hub</p>
-        <h1>Advanced Eyewear Production for Global Brands</h1>
-        <p class="lead">从研发到量产的一体化工厂展示页骨架，你后续只需替换图片和文案即可对外交付。</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="./pages/contact.html">Contact</a>
-          <a class="btn btn-secondary" href="./pages/factory.html">Learn More</a>
-        </div>
-      </div>
-    </section>
+    <section class="factory-story" aria-label="Factory story sections">
+      <div class="story-stack">
+        <article class="story-panel story-panel-cover">
+          <div class="story-media">
+            <img src="./assets/images/factory/factory.jpg" alt="OKIA Vietnam factory exterior and production environment" />
+          </div>
+          <div class="story-copy reveal">
+            <p class="eyebrow text-dark">我们的工厂</p>
+            <h2>Modern Manufacturing, Reliable Delivery</h2>
+            <p>关键词简介：越南制造基地、眼镜生产、规模化交付、质量管理、可持续运营。</p>
+            <a class="btn btn-primary" href="./pages/contact.html">Contact Us</a>
+          </div>
+        </article>
 
-    <section class="section" id="factory">
-      <div class="container two-col">
-        <div>
-          <p class="eyebrow text-dark">OKIA Vietnam Factory</p>
-          <h2>Built for Precision, Designed for Scale</h2>
-          <p>本区用于展示品牌背景、制造理念与全球合作经验。当前为演示文案，后续可按你的外部需求替换。</p>
-          <p>建议在这里突出产能、交付稳定性、合规能力，以及对客户定制化需求的响应速度。</p>
-        </div>
-        <img src="./assets/images/placeholders/about.svg" data-image-key="aboutImage" alt="Factory team and manufacturing process overview" class="rounded" />
-      </div>
-    </section>
+        <article class="story-panel story-panel-flipped" data-zoom-panel>
+          <div class="story-media">
+            <img src="./assets/images/factory/who.jpg" alt="Factory team and manufacturing process overview" />
+          </div>
+          <div class="story-title reveal-title">
+            <div class="title-block">
+              <h2>我们是谁</h2>
+            </div>
+          </div>
+          <div class="story-copy reveal">
+            <p>这里用于介绍工厂主要做什么：从研发支持、打样、生产管理到稳定量产，服务全球眼镜品牌与合作伙伴。</p>
+            <a class="btn btn-primary" href="./pages/contact.html">Start a Project</a>
+          </div>
+        </article>
 
-    <section class="section section-light" id="factory-capabilities">
-      <div class="container">
-        <p class="eyebrow text-dark">Factory Capabilities</p>
-        <h2>Capability Highlights</h2>
-        <div class="grid-4">
-          <article class="card">
-            <h3>20+ Years Experience</h3>
-            <p>覆盖多品类眼镜制造流程，满足不同市场标准。</p>
-          </article>
-          <article class="card">
-            <h3>Innovation Driven</h3>
-            <p>材料与工艺持续迭代，支持快速打样与量产切换。</p>
-          </article>
-          <article class="card">
-            <h3>International Certified</h3>
-            <p>可承接对质量体系与合规认证要求较高的项目。</p>
-          </article>
-          <article class="card">
-            <h3>Professional Service</h3>
-            <p>项目制对接，明确节点与交付标准，沟通效率高。</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="sustainability">
-      <div class="container">
-        <p class="eyebrow text-dark">Sustainability</p>
-        <h2>Responsible Manufacturing Actions</h2>
-        <div class="grid-5">
-          <article class="tile"><img src="./assets/images/placeholders/sustainability-01.svg" data-image-key="sustainability01" alt="Eco Construction" /><h3>Eco Construction</h3></article>
-          <article class="tile"><img src="./assets/images/placeholders/sustainability-02.svg" data-image-key="sustainability02" alt="Solar Energy" /><h3>Solar Energy</h3></article>
-          <article class="tile"><img src="./assets/images/placeholders/sustainability-03.svg" data-image-key="sustainability03" alt="Net Zero" /><h3>Net Zero Emissions</h3></article>
-          <article class="tile"><img src="./assets/images/placeholders/sustainability-04.svg" data-image-key="sustainability04" alt="Rain Collection" /><h3>Rain Collection System</h3></article>
-          <article class="tile"><img src="./assets/images/placeholders/sustainability-05.svg" data-image-key="sustainability05" alt="CSR" /><h3>CSR Program</h3></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-light" id="awards">
-      <div class="container">
-        <p class="eyebrow text-dark">Our Awards</p>
-        <h2>Global Recognition and Compliance</h2>
-        <div class="logo-wall">
-          <img src="./assets/images/placeholders/cert-01.svg" data-image-key="cert01" alt="ISO quality management certification logo placeholder" />
-          <img src="./assets/images/placeholders/cert-02.svg" data-image-key="cert02" alt="Environmental compliance certification logo placeholder" />
-          <img src="./assets/images/placeholders/cert-03.svg" data-image-key="cert03" alt="Safety standard certification logo placeholder" />
-          <img src="./assets/images/placeholders/cert-04.svg" data-image-key="cert04" alt="International audit certification logo placeholder" />
-          <img src="./assets/images/placeholders/cert-05.svg" data-image-key="cert05" alt="Sustainability initiative certification logo placeholder" />
-          <img src="./assets/images/placeholders/cert-06.svg" data-image-key="cert06" alt="Client compliance certification logo placeholder" />
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="career">
-      <div class="container">
-        <p class="eyebrow text-dark">Career</p>
-        <h2>Build Your Career with OKIA Vietnam</h2>
-        <p>该区块用于承载招聘与雇主品牌内容，可在后续替换为岗位列表、福利介绍、团队文化与投递入口。</p>
-        <p>建议保留三类核心信息：招聘方向、工作环境亮点、申请方式。</p>
-      </div>
-    </section>
-
-    <section class="section" id="terms">
-      <div class="container">
-        <p class="eyebrow text-dark">Terms</p>
-        <h2>Terms of Use</h2>
-        <p>本页面为交付演示版本，展示结构与交互能力，不构成最终法律文本。正式上线时请替换为法务审核后的完整条款内容。</p>
-      </div>
-    </section>
-
-    <section class="section section-light" id="privacy">
-      <div class="container">
-        <p class="eyebrow text-dark">Privacy</p>
-        <h2>Privacy Notice</h2>
-        <p>演示版本不收集个人数据。若后续引入表单、分析或第三方服务，请补充数据处理说明、用户同意机制与隐私政策细则。</p>
+        <article class="story-panel" data-zoom-panel>
+          <div class="story-media">
+            <img src="./assets/images/factory/why.jpg" alt="Factory capability and production advantages" />
+          </div>
+          <div class="story-title reveal-title">
+            <div class="title-block">
+              <h2>为什么选择我们</h2>
+            </div>
+          </div>
+          <div class="story-copy reveal">
+            <p>这里用于介绍工厂优势：成熟制造经验、稳定交付能力、国际认证意识、项目制沟通和持续改善的生产体系。</p>
+            <a class="btn btn-primary" href="./pages/contact.html">Talk to Us</a>
+          </div>
+        </article>
       </div>
     </section>
   </main>
-
   <div data-include="{{root}}partials/footer.html"></div>
-
-  <script src="./content/images.js"></script>
   <script src="./main.js"></script>
 </body>
 </html>
