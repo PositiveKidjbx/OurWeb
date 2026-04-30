@@ -10,22 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Barlow:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
-<body>
+<body data-root="./">
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="header" id="top">
-    <div class="container nav-wrap">
-      <a href="#top" class="logo" aria-label="OKIA Home">OKIA</a>
-      <button id="menuToggle" class="menu-toggle" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">☰</button>
-      <nav id="nav" class="nav" aria-label="Primary navigation">
-        <a href="#top">Home</a>
-        <a href="#sustainability">Sustainability</a>
-        <a href="#factory">OKIA Vietnam Factory</a>
-        <a href="#awards">Our Awards</a>
-        <a href="#career">Career</a>
-      </nav>
-      <a class="btn btn-primary desktop-cta" href="#contact">Contact Us</a>
-    </div>
-  </header>
+  <div data-include="{{root}}partials/header.html"></div>
 
   <main id="main-content">
     <section class="hero">
@@ -36,8 +23,8 @@
         <h1>Advanced Eyewear Production for Global Brands</h1>
         <p class="lead">从研发到量产的一体化工厂展示页骨架，你后续只需替换图片和文案即可对外交付。</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Contact</a>
-          <a class="btn btn-secondary" href="#factory">Learn More</a>
+          <a class="btn btn-primary" href="./pages/contact.html">Contact</a>
+          <a class="btn btn-secondary" href="./pages/factory.html">Learn More</a>
         </div>
       </div>
     </section>
@@ -134,23 +121,7 @@
     </section>
   </main>
 
-  <footer class="footer" id="contact">
-    <div class="container footer-grid">
-      <div>
-        <h3>Contact</h3>
-        <p>OKIA Vietnam Factory (Demo)</p>
-        <p>Address: Placeholder, Vietnam</p>
-      </div>
-      <div>
-        <p>Tel: +84-000-000-000</p>
-        <p>Email: hello@example.com</p>
-      </div>
-      <div class="footer-links">
-        <a href="#terms">Terms</a>
-        <a href="#privacy">Privacy</a>
-      </div>
-    </div>
-  </footer>
+  <div data-include="{{root}}partials/footer.html"></div>
 
   <script src="./content/images.js"></script>
   <script src="./main.js"></script>
