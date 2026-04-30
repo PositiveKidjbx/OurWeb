@@ -46,12 +46,21 @@ img, svg { max-width: 100%; display: block; }
 }
 .nav-wrap { display: flex; align-items: center; gap: 20px; min-height: 74px; }
 .logo {
-  flex: 0 1 auto;
-  font: 800 28px/1 "Avenir Next", "Inter", "Segoe UI", sans-serif;
-  color: var(--ink);
+  flex: 0 0 auto;
+  width: 168px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
   text-decoration: none;
-  letter-spacing: 0.11em;
-  white-space: nowrap;
+  background: #fbf8f1;
+}
+.logo img {
+  width: 174px;
+  height: 50px;
+  object-fit: contain;
+  object-position: center;
+  transform: translate(2px, 1px) scale(1.045);
 }
 .nav { margin-left: auto; display: flex; gap: 18px; }
 .nav a { text-decoration: none; color: var(--ink); font-weight: 600; }
@@ -98,9 +107,10 @@ h2 { font-size: clamp(28px, 3vw, 42px); margin: 0 0 22px; }
 .logo-wall { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
 .logo-wall img { width: 100%; height: 86px; object-fit: contain; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 10px; }
 .footer { background: #0f2419; color: #e4efe8; padding: 54px 0; }
-.footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 20px; }
+.footer-grid { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(220px, 0.8fr) auto; gap: 36px; }
 .footer h3 { margin: 0 0 20px; color: #f5efe4; font-size: 20px; }
 .footer p { margin: 0 0 16px; color: #d9e8df; font-size: 17px; line-height: 1.45; }
+.footer strong { color: #f5efe4; font-weight: 800; }
 .footer a { color: #e4efe8; text-decoration: none; font-weight: 650; }
 .footer a:hover { color: var(--brand-2); }
 .footer-links { display: flex; gap: 22px; align-items: start; }
@@ -146,7 +156,8 @@ button:focus-visible {
   .desktop-cta { display: none; }
   .nav-contact { display: block; }
   .menu-toggle { display: inline-block; }
-  .logo { max-width: calc(100vw - 108px); overflow: hidden; text-overflow: ellipsis; font-size: 18px; }
+  .logo { width: 136px; height: 42px; }
+  .logo img { width: 142px; height: 44px; }
   .nav {
     position: absolute;
     top: 74px;
