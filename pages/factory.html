@@ -4,24 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OKIA Vietnam Factory - OKIA</title>
-  <meta name="description" content="OKIA Vietnam Factory 页面占位。" />
+  <meta name="description" content="OKIA Vietnam Factory 工厂介绍页面。" />
   <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles/pages/factory.css" />
 </head>
 <body data-root="../">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div data-include="{{root}}partials/header.html"></div>
   <main id="main-content">
-    <section class="page-hero">
-      <div class="container">
-        <p class="eyebrow">OKIA Vietnam Factory</p>
-        <h1>Factory Page</h1>
-        <p>这是工厂页面的 dummy 版本，用于验证多页面导航结构。</p>
-      </div>
-    </section>
-    <section class="dummy-section">
-      <div class="container dummy-panel">
-        <h2>Future Factory Content</h2>
-        <p>后续可放入工厂介绍、生产流程、产能、质量体系和客户合作能力。</p>
+    <section class="factory-story" aria-label="Factory story sections">
+      <div class="story-stack">
+        <article class="story-panel story-panel-cover">
+          <div class="story-media">
+            <img src="../assets/images/factory/factory.jpg" alt="OKIA Vietnam factory exterior and production environment" />
+          </div>
+          <div class="story-copy reveal">
+            <p class="eyebrow text-dark">我们的工厂</p>
+            <h2>Modern Manufacturing, Reliable Delivery</h2>
+            <p>关键词简介：越南制造基地、眼镜生产、规模化交付、质量管理、可持续运营。</p>
+            <a class="btn btn-primary" href="../pages/contact.html">Contact Us</a>
+          </div>
+        </article>
+
+        <article class="story-panel story-panel-flipped" data-zoom-panel>
+          <div class="story-media">
+            <img src="../assets/images/factory/who.jpg" alt="Factory team and manufacturing process overview" />
+          </div>
+          <div class="story-title reveal-title">
+            <div class="title-block">
+              <h2>我们是谁</h2>
+            </div>
+          </div>
+          <div class="story-copy reveal">
+            <p>这里用于介绍工厂主要做什么：从研发支持、打样、生产管理到稳定量产，服务全球眼镜品牌与合作伙伴。</p>
+            <a class="btn btn-primary" href="../pages/contact.html">Start a Project</a>
+          </div>
+        </article>
+
+        <article class="story-panel" data-zoom-panel>
+          <div class="story-media">
+            <img src="../assets/images/factory/why.jpg" alt="Factory capability and production advantages" />
+          </div>
+          <div class="story-title reveal-title">
+            <div class="title-block">
+              <h2>为什么选择我们</h2>
+            </div>
+          </div>
+          <div class="story-copy reveal">
+            <p>这里用于介绍工厂优势：成熟制造经验、稳定交付能力、国际认证意识、项目制沟通和持续改善的生产体系。</p>
+            <a class="btn btn-primary" href="../pages/contact.html">Talk to Us</a>
+          </div>
+        </article>
       </div>
     </section>
   </main>

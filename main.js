@@ -89,6 +89,71 @@ const initNavigation = () => {
   });
 };
 
+const initRevealAnimations = () => {
+  const revealTargets = [...document.querySelectorAll(".reveal, .reveal-title")];
+  if (!revealTargets.length) {
+    return;
+  }
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+    revealTargets.forEach((target) => target.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.45
+  });
+
+  revealTargets.forEach((target) => observer.observe(target));
+};
+
+const initScrollImageEffects = () => {
+  const zoomPanels = [...document.querySelectorAll("[data-zoom-panel]")];
+  if (!zoomPanels.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  let isTicking = false;
+
+  const updateZoom = () => {
+    const viewportHeight = window.innerHeight || 1;
+
+    zoomPanels.forEach((panel) => {
+      const rect = panel.getBoundingClientRect();
+      const travel = viewportHeight + rect.height;
+      const rawProgress = (viewportHeight - rect.top) / travel;
+      const progress = Math.min(Math.max(rawProgress, 0), 1);
+      const scale = 1 + (progress * 0.18);
+
+      panel.style.setProperty("--image-scale", scale.toFixed(3));
+    });
+
+    isTicking = false;
+  };
+
+  const requestUpdate = () => {
+    if (isTicking) {
+      return;
+    }
+
+    isTicking = true;
+    window.requestAnimationFrame(updateZoom);
+  };
+
+  updateZoom();
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+};
+
 const initPage = async () => {
   try {
     await loadIncludes();
@@ -98,6 +163,8 @@ const initPage = async () => {
 
   applyImageMap();
   initNavigation();
+  initRevealAnimations();
+  initScrollImageEffects();
 };
 
 initPage();
