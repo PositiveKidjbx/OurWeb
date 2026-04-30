@@ -317,8 +317,9 @@
   padding: min(11vh, 92px) 0 96px;
   overflow: hidden;
   background:
-    linear-gradient(135deg, #101515 0%, #142927 46%, #0f4c5c 100%);
-  color: #fff;
+    linear-gradient(180deg, #fffdf8f0 0%, #f3ede3e8 56%, #e7d8bfe0 100%),
+    url("../../assets/images/factory/water-landscape.jpg") center / cover no-repeat;
+  color: var(--ink);
 }
 
 .sustainability-inner {
@@ -389,9 +390,9 @@
   z-index: 2;
   width: 48px;
   height: 64px;
-  border: 1px solid #ffffff4d;
+  border: 1px solid #d8bc82c9;
   border-radius: 999px;
-  background: color-mix(in srgb, #101515 62%, transparent 38%);
+  background: #0f4c5ce6;
   color: #fffdf8;
   font-size: 46px;
   font-weight: 200;
