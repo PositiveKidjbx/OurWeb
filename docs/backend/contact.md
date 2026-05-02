@@ -189,7 +189,20 @@ OW_DATABASE_PATH=/tmp/contact.sqlite3
 - 初始化时自动创建 contact_messages 表
 - 重复启动不会重复建表，因为使用了 CREATE TABLE IF NOT EXISTS
 
-## 6. 错误处理原则
+## 6. 安全边界
+
+当前实现把安全职责分成两层：
+
+- `service` 层负责业务级校验，包括必填字段、邮箱格式和字段最大长度
+- Nginx 层负责入口级防护，包括请求体大小限制、限流和垃圾提交拦截
+
+建议的职责分工是：
+
+- `name` / `email` / `company` / `phone` / `message` 的最大长度留在后端代码中
+- `client_max_body_size`、`limit_req` 这类措施放在 Nginx 配置中
+- 如果后续还有其它入口，后端校验仍然要保留，不能只依赖 Nginx
+
+## 7. 错误处理原则
 当前实现遵循以下原则：
 
 - 用户输入错误只返回简洁的校验信息
@@ -197,7 +210,7 @@ OW_DATABASE_PATH=/tmp/contact.sqlite3
 - 真实错误会记录在服务端日志中
 - handler 负责对外安全输出，service 负责业务校验，repository 负责底层操作
 
-## 7. 依赖关系
+## 8. 依赖关系
 依赖方向为：
 
 ```text
@@ -210,7 +223,7 @@ handler -> service -> repository -> store
 - repository 只知道数据库连接
 - store 只负责初始化数据库
 
-## 8. 未来扩展建议
+## 9. 未来扩展建议
 后续可以继续扩展：
 
 - 增加提交频率限制
