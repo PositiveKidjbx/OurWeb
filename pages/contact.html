@@ -4,30 +4,60 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us - OKIA</title>
-  <meta name="description" content="Contact Us 页面占位。" />
+  <meta name="description" content="Contact Us 页面，用于提交联系表单。" />
   <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles/pages/contact.css" />
 </head>
 <body data-root="../">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div data-include="{{root}}partials/header.html"></div>
-  <main id="main-content">
-    <section class="page-hero">
-      <div class="container">
-        <p class="eyebrow">Contact Us</p>
-        <h1>Contact Page</h1>
-        <p>这是联系页面的 dummy 版本，用于未来放置地址、电话、邮箱和表单。</p>
-      </div>
-    </section>
-    <section class="dummy-section">
-      <div class="container dummy-panel">
-        <h2>Future Contact Content</h2>
-        <p>OKIA Vietnam Factory (Demo)</p>
-        <p>Tel: +84-000-000-000</p>
-        <p>Email: hello@example.com</p>
+  <main id="main-content" class="contact-page">
+    <section class="contact-viewport">
+      <div class="contact-background" aria-hidden="true"></div>
+      <div class="container contact-stage">
+        <div class="contact-stage-copy">
+          <p class="eyebrow">Contact Us</p>
+          <h1>Send Your Message to OKIA Vietnam Factory</h1>
+          <p>Tell us a little about your project, and we will take it from there.</p>
+        </div>
+
+        <section class="contact-panel contact-panel-centered">
+          <div class="contact-panel-head">
+            <p class="eyebrow text-dark">Contact Form</p>
+            <h2>Submit a Message</h2>
+          </div>
+          <form class="contact-form" data-contact-form>
+            <label>
+              <span>Name *</span>
+              <input name="name" type="text" maxlength="100" autocomplete="name" required />
+            </label>
+            <label>
+              <span>Email *</span>
+              <input name="email" type="email" maxlength="254" autocomplete="email" required />
+            </label>
+            <label>
+              <span>Company</span>
+              <input name="company" type="text" maxlength="150" autocomplete="organization" />
+            </label>
+            <label>
+              <span>Phone</span>
+              <input name="phone" type="tel" maxlength="32" autocomplete="tel" />
+            </label>
+            <label class="contact-form-message">
+              <span>Message *</span>
+              <textarea name="message" rows="6" maxlength="5000" required></textarea>
+            </label>
+            <div class="contact-form-actions">
+              <button class="btn btn-primary" type="submit" data-contact-submit>Send Message</button>
+              <p class="contact-status" data-contact-status aria-live="polite"></p>
+            </div>
+          </form>
+        </section>
       </div>
     </section>
   </main>
   <div data-include="{{root}}partials/footer.html"></div>
   <script src="../main.js"></script>
+  <script src="../scripts/pages/contact.js"></script>
 </body>
 </html>

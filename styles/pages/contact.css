@@ -1,0 +1,114 @@
+.contact-page {
+  min-height: calc(100vh - 74px);
+  background: #0e1412;
+}
+.contact-viewport {
+  position: relative;
+  min-height: calc(100vh - 74px);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+}
+.contact-background {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(10, 16, 14, 0.86) 0%, rgba(10, 16, 14, 0.72) 44%, rgba(10, 16, 14, 0.84) 100%),
+    url("../../assets/images/factory/factory-campus.jpg") center/cover no-repeat;
+  transform: scale(1.02);
+}
+.contact-stage {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(420px, 0.9fr);
+  gap: 40px;
+  align-items: center;
+  padding: 56px 0 72px;
+}
+.contact-stage-copy {
+  color: #f4efe4;
+  max-width: 620px;
+}
+.contact-stage-copy p {
+  color: #d7ddd9;
+  max-width: 520px;
+}
+.contact-panel {
+  background: rgba(255, 252, 247, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(14px);
+}
+.contact-panel-head p:last-child {
+  margin-bottom: 0;
+}
+.contact-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+.contact-form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 650;
+  color: var(--ink);
+}
+.contact-form span {
+  font-size: 14px;
+  letter-spacing: 0.01em;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  padding: 14px 16px;
+  font: inherit;
+  resize: vertical;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 3px solid rgba(15, 76, 92, 0.18);
+  border-color: var(--brand);
+}
+.contact-form-message {
+  min-height: 164px;
+}
+.contact-form textarea {
+  min-height: 180px;
+}
+.contact-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.contact-status {
+  margin: 0;
+  min-height: 1.5em;
+  font-size: 14px;
+  color: var(--muted);
+}
+.contact-status[data-variant="success"] {
+  color: #0b6b3a;
+}
+.contact-status[data-variant="error"] {
+  color: #9d2c2c;
+}
+.contact-status[data-variant="pending"] {
+  color: var(--brand);
+}
+
+@media (max-width: 860px) {
+  .contact-stage { grid-template-columns: 1fr; gap: 24px; }
+}
+
+@media (max-width: 560px) {
+  .contact-stage { padding: 36px 0 56px; }
+  .contact-panel { padding: 22px; }
+}
