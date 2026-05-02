@@ -27,10 +27,8 @@ func main() {
 	contactHandler := handler.NewContactHandler(contactService)
 
 	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
-		c.String(200, "Hello Gin")
-	})
 	r.POST("/api/contact", contactHandler.Create)
+	r.Static("/", "../public")
 
 	if err := r.Run(serverAddr); err != nil {
 		log.Fatalf("failed to start server: %v", err)
