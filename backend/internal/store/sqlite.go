@@ -61,6 +61,7 @@ CREATE TABLE IF NOT EXISTS contact_messages (
 	company TEXT,
 	phone TEXT,
 	message TEXT NOT NULL,
+	status TEXT NOT NULL DEFAULT 'new',
 	created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );`
 
