@@ -37,7 +37,7 @@ func TestCreateContactMessage(t *testing.T) {
 		),
 	).Create)
 
-	payload := `{"name":"Alice","email":"alice@example.com","company":"OKIA","phone":"123456789","message":"Hello from contact form"}`
+	payload := `{"name":"Alice","email":"alice@example.com","company":"PROJECT EYEWEAR","phone":"123456789","message":"Hello from contact form"}`
 	req := httptest.NewRequest(http.MethodPost, "/api/contact", strings.NewReader(payload))
 	req.Header.Set("Content-Type", "application/json")
 	rec := httptest.NewRecorder()
@@ -67,7 +67,7 @@ LIMIT 1
 		t.Fatalf("read inserted row: %v", err)
 	}
 
-	if name != "Alice" || email != "alice@example.com" || company != "OKIA" || phone != "123456789" || message != "Hello from contact form" {
+	if name != "Alice" || email != "alice@example.com" || company != "PROJECT EYEWEAR" || phone != "123456789" || message != "Hello from contact form" {
 		t.Fatalf("unexpected row content: name=%q email=%q company=%q phone=%q message=%q", name, email, company, phone, message)
 	}
 }
@@ -292,7 +292,7 @@ func insertContactMessage(t *testing.T, db *sql.DB, name string) {
 		`INSERT INTO contact_messages (name, email, company, phone, message) VALUES (?, ?, ?, ?, ?)`,
 		name,
 		strings.ToLower(name)+"@example.com",
-		"OKIA",
+		"PROJECT EYEWEAR",
 		"123456789",
 		"Hello from "+name,
 	)

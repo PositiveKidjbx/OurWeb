@@ -140,7 +140,7 @@ Content-Type: application/json
 {
   "name": "Alice",
   "email": "alice@example.com",
-  "company": "OKIA",
+  "company": "PROJECT EYEWEAR",
   "phone": "123456789",
   "message": "Hello from contact form"
 }
