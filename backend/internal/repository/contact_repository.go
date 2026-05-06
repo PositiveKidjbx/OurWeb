@@ -15,6 +15,7 @@ type ContactMessage struct {
 	Company   string
 	Phone     string
 	Message   string
+	Status    string
 	CreatedAt string
 }
 
@@ -50,4 +51,54 @@ func (r *ContactRepository) Create(ctx context.Context, message ContactMessage) 
 	}
 
 	return id, nil
+}
+
+func (r *ContactRepository) List(ctx context.Context, limit int, offset int) ([]ContactMessage, int, error) {
+	if r == nil || r.db == nil {
+		return nil, 0, errors.New("contact repository is not initialized")
+	}
+
+	var total int
+	if err := r.db.QueryRowContext(ctx, `SELECT COUNT(*) FROM contact_messages`).Scan(&total); err != nil {
+		return nil, 0, fmt.Errorf("count contact messages: %w", err)
+	}
+
+	rows, err := r.db.QueryContext(
+		ctx,
+		`SELECT id, name, email, COALESCE(company, ''), COALESCE(phone, ''), message, status, created_at
+FROM contact_messages
+ORDER BY created_at DESC, id DESC
+LIMIT ? OFFSET ?`,
+		limit,
+		offset,
+	)
+	if err != nil {
+		return nil, 0, fmt.Errorf("list contact messages: %w", err)
+	}
+	defer rows.Close()
+
+	messages := make([]ContactMessage, 0)
+	for rows.Next() {
+		var message ContactMessage
+		if err := rows.Scan(
+			&message.ID,
+			&message.Name,
+			&message.Email,
+			&message.Company,
+			&message.Phone,
+			&message.Message,
+			&message.Status,
+			&message.CreatedAt,
+		); err != nil {
+			return nil, 0, fmt.Errorf("scan contact message: %w", err)
+		}
+
+		messages = append(messages, message)
+	}
+
+	if err := rows.Err(); err != nil {
+		return nil, 0, fmt.Errorf("iterate contact messages: %w", err)
+	}
+
+	return messages, total, nil
 }

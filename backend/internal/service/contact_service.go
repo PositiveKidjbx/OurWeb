@@ -19,6 +19,25 @@ type ContactInput struct {
 	Message string `json:"message"`
 }
 
+type ContactMessageOutput struct {
+	ID        int64  `json:"id"`
+	Name      string `json:"name"`
+	Email     string `json:"email"`
+	Company   string `json:"company"`
+	Phone     string `json:"phone"`
+	Message   string `json:"message"`
+	Status    string `json:"status"`
+	CreatedAt string `json:"created_at"`
+}
+
+type ContactMessagePage struct {
+	Messages   []ContactMessageOutput `json:"messages"`
+	Page       int                    `json:"page"`
+	PageSize   int                    `json:"page_size"`
+	Total      int                    `json:"total"`
+	TotalPages int                    `json:"total_pages"`
+}
+
 const (
 	// Application-level caps live here; transport-level limits and rate limiting belong at Nginx.
 	maxNameLength    = 100
@@ -26,6 +45,8 @@ const (
 	maxCompanyLength = 150
 	maxPhoneLength   = 32
 	maxMessageLength = 5000
+	defaultPageSize  = 20
+	maxPageSize      = 100
 )
 
 type ValidationError struct {
@@ -65,6 +86,47 @@ func (s *ContactService) Submit(ctx context.Context, input ContactInput) (int64,
 	}
 
 	return id, nil
+}
+
+func (s *ContactService) ListMessages(ctx context.Context, page int, pageSize int) (ContactMessagePage, error) {
+	if s == nil || s.repo == nil {
+		return ContactMessagePage{}, errors.New("contact service is not initialized")
+	}
+
+	page, pageSize = normalizePagination(page, pageSize)
+	offset := (page - 1) * pageSize
+
+	messages, total, err := s.repo.List(ctx, pageSize, offset)
+	if err != nil {
+		return ContactMessagePage{}, err
+	}
+
+	outputs := make([]ContactMessageOutput, 0, len(messages))
+	for _, message := range messages {
+		outputs = append(outputs, ContactMessageOutput{
+			ID:        message.ID,
+			Name:      message.Name,
+			Email:     message.Email,
+			Company:   message.Company,
+			Phone:     message.Phone,
+			Message:   message.Message,
+			Status:    message.Status,
+			CreatedAt: message.CreatedAt,
+		})
+	}
+
+	totalPages := 0
+	if total > 0 {
+		totalPages = (total + pageSize - 1) / pageSize
+	}
+
+	return ContactMessagePage{
+		Messages:   outputs,
+		Page:       page,
+		PageSize:   pageSize,
+		Total:      total,
+		TotalPages: totalPages,
+	}, nil
 }
 
 func validateContactInput(input ContactInput) error {
@@ -112,4 +174,20 @@ func validateContactInput(input ContactInput) error {
 
 func runeLen(value string) int {
 	return utf8.RuneCountInString(value)
+}
+
+func normalizePagination(page int, pageSize int) (int, int) {
+	if page < 1 {
+		page = 1
+	}
+
+	if pageSize < 1 {
+		pageSize = defaultPageSize
+	}
+
+	if pageSize > maxPageSize {
+		pageSize = maxPageSize
+	}
+
+	return page, pageSize
 }

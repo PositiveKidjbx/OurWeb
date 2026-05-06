@@ -17,6 +17,9 @@ import (
 var databasePath = envOrDefault("OW_DATABASE_PATH", "data/contact_messages.sqlite3")
 var serverAddr = envOrDefault("PORT", ":8080")
 var frontendDir = envOrDefault("OW_FRONTEND_DIR", "..")
+var adminUsername = os.Getenv("OW_ADMIN_USERNAME")
+var adminPassword = os.Getenv("OW_ADMIN_PASSWORD")
+var adminSessionSecret = os.Getenv("OW_ADMIN_SESSION_SECRET")
 
 func main() {
 	db, err := store.InitSQLite(databasePath)
@@ -28,6 +31,12 @@ func main() {
 	contactRepository := repository.NewContactRepository(db)
 	contactService := service.NewContactService(contactRepository)
 	contactHandler := handler.NewContactHandler(contactService)
+	adminHandler := handler.NewAdminHandler(contactService, handler.AdminConfig{
+		Username:      adminUsername,
+		Password:      adminPassword,
+		SessionSecret: adminSessionSecret,
+		CookieSecure:  gin.Mode() == gin.ReleaseMode,
+	})
 
 	r := gin.Default()
 	r.LoadHTMLGlob(filepath.Join(frontendDir, "templates", "*"))
@@ -35,6 +44,11 @@ func main() {
 
 	api := r.Group("/api")
 	api.POST("/contact", contactHandler.Create)
+	api.POST("/admin/login", adminHandler.Login)
+
+	adminAPI := api.Group("/admin")
+	adminAPI.Use(adminHandler.RequireAdmin)
+	adminAPI.GET("/messages", adminHandler.ListMessages)
 
 	registerPageRoute(r, "/", "index.html", "Home")
 	registerPageRoute(r, "/contact", "contact.html", "Home")
