@@ -1,25 +1,3 @@
-const getRootPath = () => document.body.dataset.root || "./";
-
-const withRoot = (value) => value.replaceAll("{{root}}", getRootPath());
-
-const loadIncludes = async () => {
-  const includeTargets = [...document.querySelectorAll("[data-include]")];
-
-  await Promise.all(includeTargets.map(async (target) => {
-    const includePath = target.getAttribute("data-include");
-    if (!includePath) {
-      return;
-    }
-
-    const response = await fetch(withRoot(includePath));
-    if (!response.ok) {
-      throw new Error(`Failed to load include: ${includePath}`);
-    }
-
-    target.outerHTML = withRoot(await response.text());
-  }));
-};
-
 const applyImageMap = () => {
   const imageMap = window.IMAGE_MAP || {};
 
@@ -59,7 +37,7 @@ const initNavigation = () => {
     setNavOpen(isOpen);
   });
 
-  document.querySelectorAll('a[href^="#"], a[href$=".html"], a[href$="/"]').forEach((anchor) => {
+  document.querySelectorAll("a[href]").forEach((anchor) => {
     anchor.addEventListener("click", () => {
       closeNav();
     });
@@ -91,7 +69,7 @@ const initNavigation = () => {
   const currentPath = window.location.pathname.split("/").pop() || "index.html";
   nav.querySelectorAll("a[href]").forEach((anchor) => {
     const href = anchor.getAttribute("href") || "";
-    const normalizedHref = href.replaceAll("{{root}}", "").split("/").pop() || "index.html";
+    const normalizedHref = href.split("/").pop() || "index.html";
     if (normalizedHref === currentPath) {
       anchor.setAttribute("aria-current", "page");
     }
@@ -126,12 +104,6 @@ const initRevealAnimations = () => {
 };
 
 const initPage = async () => {
-  try {
-    await loadIncludes();
-  } catch (error) {
-    console.error(error);
-  }
-
   applyImageMap();
   initNavigation();
   initRevealAnimations();

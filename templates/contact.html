@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us - OKIA</title>
   <meta name="description" content="Contact Us 页面，用于提交联系表单。" />
-  <link rel="stylesheet" href="../styles.css" />
-  <link rel="stylesheet" href="../styles/pages/contact.css" />
+  <link rel="stylesheet" href="/static/styles.css" />
+  <link rel="stylesheet" href="/static/styles/pages/contact.css" />
 </head>
-<body data-root="../">
+<body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <div data-include="{{root}}partials/header.html"></div>
+  {{template "header.html" .}}
   <main id="main-content" class="contact-page">
     <section class="contact-viewport">
       <div class="contact-background" aria-hidden="true"></div>
@@ -56,8 +56,8 @@
       </div>
     </section>
   </main>
-  <div data-include="{{root}}partials/footer.html"></div>
-  <script src="../main.js"></script>
-  <script src="../scripts/pages/contact.js"></script>
+  {{template "footer.html" .}}
+  <script src="/static/main.js"></script>
+  <script src="/static/scripts/pages/contact.js"></script>
 </body>
 </html>
